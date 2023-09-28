@@ -1,0 +1,82 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Register </title>
+        <style>
+            .header{
+                padding: 5px 120px;
+                width: 150px;
+                height: 70px;
+                background-color: #236B8E;
+            }
+            
+            .border{
+                padding: 80px 50px;
+                width: 400px;
+                height: 450px;
+                border: 1px solid #236B8E;
+                border-radius: 0px;
+                background-color: #9AC0CD;
+            }
+            
+            .btn {
+                padding: 10px 40px;
+                background-color: #236B8E;
+                color: #FFFFFF;
+                font-style: oblique;
+                font-weight: bold;
+                border-radius: 10px;
+            }
+            
+            .textbox{
+                padding: 10px 40px;
+                background-color: #236B8E;
+                color: #FFFFFF;
+                border-radius: 10px;
+            }
+                 
+            ::placeholder {
+                color: #FFFFFF;
+                opacity: 1;
+                font-style: oblique;
+                font-weight: bold;
+            }
+            
+            .word{
+                color: #FFFFFF;
+                font-style: oblique;
+                font-weight: bold;
+            }
+            
+            .bottom{
+                color: #236B8E;
+                font-style: oblique;
+                font-weight: bold;
+            }</style>             
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Register</h1>
+             </div>
+             </br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('register') }}" method="post">
+                    <div class="message">
+                        {% if msg %}
+                            <p>{{ msg }}</p>
+                        {% endif %}
+                    </div>
+                    <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+                    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+                    <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Sign Up"></br>
+                </form>
+            </h2>
+            <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Sign In here</a></p>
+          </div>
+        </div>
+    </body>
+</html>

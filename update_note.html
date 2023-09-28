@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Note</title>
+</head>
+<style>
+     .su {
+        padding-left: 20px;
+        height: 100%;
+        width: 200px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #323131;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+    .center {
+        align-items: center;
+        padding-left: 400px;
+        padding-top: 20px;
+        width: 50%;
+        margin: 50px;
+        filter: drop-shadow(10px 10px 100px red);
+
+    }
+</style>
+</style>
+
+<body>
+    <div style="display: flex;">
+        <div class="su">
+
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+                <a href="{{ url_for('dashboard')}}"><button type="button" style="padding: 20px;"
+                        class="btn btn-dark">Dashboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a><br><br><br>
+                <a href="{{ url_for('query')}}"><button type="button" style="padding: 20px;" class="btn btn-dark">Write
+                        your
+                        query&nbsp;&nbsp;</button></a><br><br><br>
+
+                <a href="{{ url_for('logout')}}"><button type="button" style="padding: 20px;"
+                        class="btn btn-dark">logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a><br><br><br>
+            </div>
+
+        </div>
+        <div class="center">
+            <h1><u>Update Note</u></h1>
+            <form method="POST">
+                <textarea name="new_content" rows="8" cols="80">{{ note.content }}</textarea><br>
+                <button type="submit">Update</button><br><br><br><br>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
